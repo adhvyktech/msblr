@@ -270,7 +270,7 @@ describe('settings', () => {
     expect((await call('GET', '/api/settings', head)).statusCode).toBe(403);
     const r = await call('GET', '/api/settings', fin);
     expect(r.statusCode).toBe(200);
-    expect(Object.keys(r.json().data).sort()).toEqual(['businessApprovalRequired', 'contentStaleDays', 'receiptPrefix', 'sabha', 'subscription', 'theme', 'trustedDeviceDays', 'upi', 'wishTemplates']);
+    expect(Object.keys(r.json().data).sort()).toEqual(['businessApprovalRequired', 'contentStaleDays', 'publicSite', 'receiptPrefix', 'sabha', 'subscription', 'theme', 'trustedDeviceDays', 'upi', 'wishTemplates']);
   });
 
   it('PUT needs settings.edit', async () => {

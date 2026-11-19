@@ -5,6 +5,7 @@ import { MemberLayout } from '@/components/layout/MemberLayout';
 import { AdminLayout } from '@/components/layout/AdminLayout';
 import { RequireAuth, RequireStaff } from '@/lib/guards';
 import NotFound from '@/features/shell/pages/NotFound';
+import { RootIndex, RootLayout } from '@/features/site/RootGate';
 
 /**
  * Every features/<name>/routes.tsx may export any of:
@@ -31,10 +32,16 @@ function collect(kind: keyof FeatureRoutes): RouteObject[] {
   return all.filter((r) => !isPlaceholder(r) || !real.has(key(r)));
 }
 
+const memberAll = collect('memberRoutes');
+const homeRoute = memberAll.find((r) => r.index);
+const memberRest = memberAll.filter((r) => r !== homeRoute);
+
 export const router = createBrowserRouter([
+  // "/": public landing when logged out, member home when logged in (no flash: spinner while auth resolves)
+  { path: '/', element: <RootLayout />, children: [{ index: true, element: <RootIndex member={homeRoute?.element} /> }] },
   { element: <AuthLayout />, children: collect('authRoutes') },
   { element: <PublicLayout />, children: collect('publicRoutes') },
-  { element: <RequireAuth />, children: [{ element: <MemberLayout />, children: collect('memberRoutes') }] },
+  { element: <RequireAuth />, children: [{ element: <MemberLayout />, children: memberRest }] },
   {
     path: '/admin',
     element: <RequireAuth><RequireStaff><AdminLayout /></RequireStaff></RequireAuth>,

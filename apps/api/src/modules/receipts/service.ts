@@ -136,7 +136,7 @@ export async function ownsReceipt(
 }
 
 registerFileAccessRule(async (file, user) => {
-  if (file.kind !== 'receipt_pdf') return false;
+  if (!user || file.kind !== 'receipt_pdf') return false;
   const rc = await prisma.receipt.findFirst({ where: { pdfFileId: file.id }, select: { familyId: true, paymentId: true } });
   return rc ? ownsReceipt(rc, user) : false;
 });

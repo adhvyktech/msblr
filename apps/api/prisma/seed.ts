@@ -108,6 +108,15 @@ async function main() {
       anniversary: { en: 'Happy Anniversary, {name}! Wishing you a lifetime of togetherness.', hi: 'विवाह की वर्षगांठ की हार्दिक शुभकामनाएं, {name}! आपका साथ सदा बना रहे।' },
     },
     receiptPrefix: 'R',
+    publicSite: {
+      about: {
+        en: 'Maheshwari Sabha, Bengaluru is the community organisation that serves the Maheshwari families living in Bengaluru. We bring families together through social, cultural and religious activities, and celebrate our traditions, including Mahesh Navami, as one community.\n\nThrough our trusts we support education and medical aid for those in need. This website and the MSBLR E-Directory help members stay connected, find one another and take part in the life of the Sabha.',
+        hi: 'माहेश्वरी सभा, बेंगलुरु बेंगलुरु में रहने वाले माहेश्वरी परिवारों की सेवा करने वाली सामुदायिक संस्था है। हम सामाजिक, सांस्कृतिक और धार्मिक गतिविधियों के माध्यम से परिवारों को जोड़ते हैं तथा महेश नवमी सहित अपनी परंपराओं को एक समाज के रूप में मनाते हैं।\n\nअपने ट्रस्टों के माध्यम से हम ज़रूरतमंदों के लिए शिक्षा और चिकित्सा सहायता में सहयोग करते हैं। यह वेबसाइट और MSBLR ई-डायरेक्टरी सदस्यों को जुड़े रहने, एक-दूसरे को खोजने और सभा के कार्यों में भाग लेने में मदद करती है।',
+      },
+      committee: [],
+      showHighlightPhotos: false,
+      mapsUrl: '',
+    },
     sabha: {
       name: 'Maheshwari Sabha, Bengaluru', nameHi: 'माहेश्वरी सभा, बेंगलुरु',
       address: 'Maheshwari Bhavan, Okalipuram, Bengaluru 560021', phone: '080-2345 6789', email: 'office@msblr.example',

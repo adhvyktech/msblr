@@ -6,6 +6,7 @@ import { parse } from '../../lib/parse';
 import { httpError } from '../../lib/errors';
 import { audit } from '../../lib/audit';
 import { getSetting, setSetting } from '../../lib/settings';
+import { invalidatePublicSite } from '../public/site';
 
 const text = (max = 300) => z.string().trim().max(max);
 const bilingual = z.object({ en: text(500).min(1, 'Message is required'), hi: text(500).min(1, 'Message is required') });
@@ -37,6 +38,20 @@ export const SETTINGS: Record<string, { schema: ZodTypeAny; def: unknown }> = {
     }),
     def: { name: '', nameHi: '', address: '', phone: '', email: '' },
   },
+  publicSite: {
+    schema: z.object({
+      about: z.object({ en: text(4000).default(''), hi: text(4000).default('') }).default({ en: '', hi: '' }),
+      committee: z.array(z.object({
+        name: text(100).min(1, 'Name is required'),
+        role: text(100).min(1, 'Role is required'),
+        roleHi: text(100).optional(),
+        photoFileId: z.number().int().positive().nullable().optional(),
+      })).max(40, 'Maximum 40 committee members').default([]),
+      showHighlightPhotos: z.boolean().default(false),
+      mapsUrl: z.union([z.literal(''), z.string().trim().max(500).url('Enter a valid link').regex(/^https?:\/\//i, 'Link must start with http:// or https://')]).optional(),
+    }),
+    def: { about: { en: '', hi: '' }, committee: [], showHighlightPhotos: false, mapsUrl: '' },
+  },
 };
 
 const isPlainObject = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v);
@@ -67,8 +82,18 @@ const routes: FastifyPluginAsync = async (app) => {
       // The QR is shown to members on the payment page, so it must be publicly readable.
       if (f.visibility === 'PRIVATE') await prisma.file.update({ where: { id: f.id }, data: { visibility: 'MEMBERS' } });
     }
+    if (key === 'publicSite') {
+      // Committee photos are shown to anonymous visitors, so they must be publicly readable.
+      const ids = (value as { committee: { photoFileId?: number | null }[] }).committee.map((c) => c.photoFileId).filter((x): x is number => !!x);
+      if (ids.length) {
+        const found = await prisma.file.findMany({ where: { id: { in: ids } }, select: { id: true } });
+        if (new Set(found.map((f) => f.id)).size !== new Set(ids).size) throw httpError(400, 'VALIDATION_ERROR', 'A committee photo was not found');
+        await prisma.file.updateMany({ where: { id: { in: ids }, visibility: { not: 'PUBLIC' } }, data: { visibility: 'PUBLIC' } });
+      }
+    }
     const before = merge(s.def, await getSetting<unknown>(key, undefined));
     await setSetting(key, value);
+    invalidatePublicSite();
     await audit(req, { action: 'setting.update', entity: 'setting', entityId: key, summary: `Changed setting "${key}"`, before, after: value });
     return { data: { key, value } };
   });

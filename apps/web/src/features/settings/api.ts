@@ -14,6 +14,7 @@ export interface SettingsData {
   wishTemplates: { birthday: Bilingual; anniversary: Bilingual };
   receiptPrefix: string;
   sabha: { name: string; nameHi: string; address: string; phone: string; email: string };
+  publicSite: { about: Bilingual; committee: { name: string; role: string; roleHi?: string; photoFileId?: number | null }[]; showHighlightPhotos: boolean; mapsUrl?: string };
 }
 export interface Zone { id: number; name: string; sort: number; families: number; events: number; staff: number }
 
@@ -38,6 +39,7 @@ export function useSaveSetting<K extends keyof SettingsData>(key: K) {
       toast.success(t('saved'));
       void qc.invalidateQueries({ queryKey: ['settings', 'all'] });
       void qc.invalidateQueries({ queryKey: ['public-config'] });
+      void qc.invalidateQueries({ queryKey: ['public-site'] });
     },
     onError: (e: Error) => toast.error(e.message),
   });

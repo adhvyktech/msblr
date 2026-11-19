@@ -6,6 +6,7 @@ import { fieldError, useSaveSetting, useSettings, type SettingsData } from '../a
 import { SettingCard } from '../components/SettingCard';
 import { ThemePicker } from '../components/ThemePicker';
 import { ZonesManager } from '../components/ZonesManager';
+import { PublicSiteSettings } from '../components/PublicSiteSettings';
 
 const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 
@@ -125,6 +126,7 @@ export default function Settings() {
       <PageHeader title={t('title')} subtitle={t('subtitle')} className="mb-0" />
       <SettingCard id="appearance" title={t('appearance.title')} description={t('appearance.desc')}><ThemePicker value={s.theme} /></SettingCard>
       <Sabha value={s.sabha} />
+      <PublicSiteSettings value={s.publicSite} />
       <Upi value={s.upi} />
       <Subscription value={s.subscription} />
       <Receipt value={s.receiptPrefix} />

@@ -1,0 +1,56 @@
+{
+  "nav": { "home": "Home", "about": "About", "events": "Events", "trusts": "Trusts", "contact": "Contact", "menu": "Menu", "closeMenu": "Close menu" },
+  "memberLogin": "Member login",
+  "registerFamily": "Register family",
+  "dashboard": "My dashboard",
+  "hero": {
+    "tagline": "Connect • Engage • Prosper",
+    "intro": "The online home of the Maheshwari community in Bengaluru. Find families and businesses, follow Sabha events and stay close to our traditions.",
+    "advertise": "Advertise with us"
+  },
+  "stats": { "families": "Active families", "businesses": "Community businesses", "events": "Upcoming events" },
+  "about": { "title": "About the Sabha", "empty": "Information about the Sabha will be published here soon.", "more": "Read more", "committee": "Office-bearers & committee", "committeeEmpty": "The committee will be announced here soon." },
+  "events": { "title": "Upcoming events", "all": "All events", "empty": "No upcoming events right now. Please check back soon.", "notice": "Notice (PDF)", "venue": "Venue", "kind": { "AGM": "General meeting", "EC": "Committee", "SOCIAL": "Social", "RELIGIOUS": "Religious", "CULTURAL": "Cultural", "SPORTS": "Sports", "OTHER": "Event" } },
+  "highlights": { "title": "Recent highlights", "empty": "Highlights from our recent events will appear here." },
+  "trusts": { "title": "Our trusts", "subtitle": "Trusts run by the Sabha for education, medical aid and community welfare.", "empty": "Information about our trusts will be published here soon.", "all": "All trusts" },
+  "advertise": { "title": "Grow your business with the Sabha", "body": "Reach Maheshwari families across Bengaluru through banners and listings in the community app and website. Simple plans, quick approval.", "cta": "Advertise with us" },
+  "app": { "title": "Get the app", "soon": "Coming soon", "google": "Google Play", "apple": "App Store", "body": "The MSBLR E-Directory app is on its way." },
+  "contact": { "title": "Contact us", "address": "Address", "phone": "Phone", "email": "Email", "map": "View on Google Maps", "notSet": "Not available" },
+  "footer": { "quick": "Quick links", "contact": "Contact", "privacy": "Privacy policy", "terms": "Terms of use", "copyright": "© Maheshwari Sabha, Bengaluru", "powered": "Powered by Adhvyk Tech Solution" },
+  "pages": { "eventsTitle": "Events", "eventsSubtitle": "Upcoming events of the Sabha, open for everyone to see.", "trustsTitle": "Our trusts" },
+  "loadError": "We could not load the website. Please try again.",
+  "legal": {
+    "draft": "Draft — to be reviewed by the Sabha",
+    "updated": "Last updated: {{date}}",
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "Maheshwari Sabha, Bengaluru (\"the Sabha\", \"we\") runs the MSBLR E-Directory, a members' directory and community app. This policy explains what personal data we collect, why, and the choices you have, in line with the Digital Personal Data Protection Act, 2023 (India).",
+      "sections": [
+        { "h": "1. Data we collect", "p": ["Family and member details you give us when you register: names, relationship, date of birth, anniversary, mobile number, email, address, zone, photo, occupation and business details.", "Membership and payment records: subscription payments, UTR/reference numbers, payment proof images and receipts.", "Account and device information needed to sign you in securely, such as login sessions and notification tokens.", "Advertiser details if you buy an advertisement: business name, contact details and creative files."] },
+        { "h": "2. Why we use it", "p": ["To maintain the community directory and verify membership.", "To process subscriptions and issue receipts.", "To share Sabha notices, events, wishes and reminders with members.", "To run advertising on the website and app, and to keep the service secure and prevent misuse."] },
+        { "h": "3. You control what others see", "p": ["Members can choose which details (for example mobile, email, address, date of birth, photo) are visible to other members. Hidden details are not shown in the directory. Family heads manage visibility for their family.", "Nothing about individual members or families is shown on the public website. The public pages show only Sabha information, events, trusts and committee members entered by the Sabha."] },
+        { "h": "4. We do not sell your data", "p": ["We do not sell or rent personal data. We do not share it with third parties for their marketing. We share data only with service providers who help us run the service (for example SMS and notification delivery), and where the law requires."] },
+        { "h": "5. How long we keep it", "p": ["We keep membership and payment records for as long as the family is a member and for the period required by applicable accounting and legal rules. When data is no longer needed, we delete or anonymise it."] },
+        { "h": "6. Where data is held and how it is protected", "p": ["Data is hosted on secure servers. We use access control, encrypted connections and an audit trail of administrative actions. No system is perfectly secure, but we work to protect your information."] },
+        { "h": "7. Your rights", "p": ["You may ask to see, correct or erase your personal data, withdraw consent, or nominate someone to exercise these rights on your behalf. You can edit most details yourself in the app. For anything else, contact us using the details below."] },
+        { "h": "8. Children's data", "p": ["Details of minors are entered and managed by the parent or guardian who is the family head, who is responsible for giving consent on the child's behalf."] },
+        { "h": "9. Grievances and contact", "p": ["For questions, requests or complaints about your data, please write to the Sabha at the email address below. We will respond within a reasonable time."] },
+        { "h": "10. Changes", "p": ["We may update this policy from time to time. The latest version is always available on this page."] }
+      ]
+    },
+    "terms": {
+      "title": "Terms of use",
+      "intro": "By using the MSBLR E-Directory website and app, you agree to these terms. They apply to visitors, members and advertisers.",
+      "sections": [
+        { "h": "1. Who can use the service", "p": ["The directory is for families of the Maheshwari community in Bengaluru who have been approved by the Sabha. Public pages may be viewed by anyone."] },
+        { "h": "2. Your account", "p": ["Keep your login details safe. You are responsible for activity on your account. Give accurate information and keep it up to date. The Sabha may approve, reject or suspend registrations and accounts."] },
+        { "h": "3. Acceptable use", "p": ["Use member information only for community purposes. Do not copy the directory, use it for unsolicited marketing, harass anyone, post unlawful or misleading content, or try to break or misuse the service."] },
+        { "h": "4. Subscriptions and payments", "p": ["Membership subscriptions are paid as set by the Sabha. A receipt is issued after a payment is verified. Payments are governed by the Sabha's rules and are generally non-refundable unless the Sabha decides otherwise."] },
+        { "h": "5. Advertisements", "p": ["Advertisements are subject to approval and must be lawful, truthful and suitable for the community. The Sabha may reject or remove any advertisement. An advertisement is not an endorsement by the Sabha."] },
+        { "h": "6. Content", "p": ["Content posted by the Sabha belongs to the Sabha or its owners. You keep ownership of what you upload but allow the Sabha to display it in the service for its purpose."] },
+        { "h": "7. Availability and liability", "p": ["We try to keep the service available and accurate, but it is provided as is. To the extent permitted by law, the Sabha is not liable for losses arising from use of the service or from dealings between members or with advertisers."] },
+        { "h": "8. Changes and contact", "p": ["We may update these terms. Continued use means you accept the updated terms. Questions can be sent to the Sabha at the email address below. These terms are governed by the laws of India."] }
+      ]
+    }
+  }
+}

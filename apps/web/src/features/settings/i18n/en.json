@@ -3,6 +3,18 @@
   "title": "Settings",
   "subtitle": "Look and feel, Sabha details, payments and rules for the whole app.",
   "saved": "Settings saved",
+  "publicSite": {
+    "title": "Public website",
+    "desc": "What visitors see on the public homepage and About page. Events, trusts and highlights are taken from the content you already post.",
+    "about": "About the Sabha", "committee": "Office-bearers & committee",
+    "committeeHint": "Entered here by you. Nothing is taken from member records.",
+    "name": "Name", "role": "Role", "roleHi": "Role (Hindi)", "photo": "Photo (optional)", "photoHint": "Shown publicly on the website.",
+    "up": "Move up", "down": "Move down", "remove": "Remove", "add": "Add committee member",
+    "showPhotos": "Show highlight photos on public website",
+    "showPhotosHint": "Privacy: when on, photos attached to published highlights can be seen by anyone on the internet, including people in them. Leave off unless everyone pictured is comfortable.",
+    "maps": "Google Maps link", "mapsHint": "Optional. If empty, a link is built from the Sabha address.",
+    "view": "View public site"
+  },
   "appearance": {
     "title": "Appearance",
     "desc": "Pick the look of the app. It applies immediately for everyone.",

@@ -38,15 +38,19 @@ export const KIND_VIEW_PERMS: Record<string, string[]> = {
 
 /**
  * Extra access rules other modules can register (e.g. "members of family X may see receipt PDF Y").
- * Return true to allow. Called only for PRIVATE files when the built-in rules deny.
+ * Return true to allow. Called for non-public files when the built-in rules deny; `user` is undefined for anonymous visitors.
  */
-export type FileAccessRule = (file: FileRow, user: AuthUser) => Promise<boolean> | boolean;
+export type FileAccessRule = (file: FileRow, user: AuthUser | undefined) => Promise<boolean> | boolean;
 const rules: FileAccessRule[] = [];
 export const registerFileAccessRule = (r: FileAccessRule) => { rules.push(r); };
 
 export async function canAccessFile(file: FileRow, user: AuthUser | undefined): Promise<boolean> {
   if (file.visibility === 'PUBLIC') return true;
-  if (!user) return false;
+  if (!user) {
+    // Only rules that explicitly handle anonymous visitors can allow them (e.g. public-site highlight photos).
+    for (const r of rules) if (await r(file, undefined)) return true;
+    return false;
+  }
   if (file.visibility === 'MEMBERS') return true;
   if (file.ownerUserId === user.id) return true;
   const need = KIND_VIEW_PERMS[file.kind] ?? [];

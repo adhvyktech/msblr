@@ -2,6 +2,9 @@ import type { FastifyPluginAsync } from 'fastify';
 import { prisma } from '../../lib/prisma';
 import { getSetting } from '../../lib/settings';
 import { fileUrl } from '../../lib/files';
+import { buildPublicSite, registerPublicSiteFileRules } from './site';
+
+registerPublicSiteFileRules();
 
 const routes: FastifyPluginAsync = async (app) => {
   app.get('/config', async () => {
@@ -22,6 +25,11 @@ const routes: FastifyPluginAsync = async (app) => {
         languages: ['en', 'hi'],
       },
     };
+  });
+
+  app.get('/site', async (_req, reply) => {
+    reply.header('Cache-Control', 'public, max-age=60');
+    return { data: await buildPublicSite() };
   });
 
   app.get('/stats', async () => {

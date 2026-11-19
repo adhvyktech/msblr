@@ -285,7 +285,7 @@ export function registerAdFileRules() {
   if (ruleRegistered) return;
   ruleRegistered = true;
   registerFileAccessRule(async (file, user) => {
-    if (file.kind !== 'payment_proof' || !(user.perms.includes('ads.manage') || user.perms.includes('ads.approve'))) return false;
+    if (!user || file.kind !== 'payment_proof' || !(user.perms.includes('ads.manage') || user.perms.includes('ads.approve'))) return false;
     return (await prisma.payment.count({ where: { screenshotFileId: file.id, kind: 'AD' } })) > 0;
   });
 }
