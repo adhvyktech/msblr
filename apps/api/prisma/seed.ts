@@ -119,7 +119,7 @@ async function main() {
     },
     sabha: {
       name: 'Maheshwari Sabha, Bengaluru', nameHi: 'माहेश्वरी सभा, बेंगलुरु',
-      address: 'Maheshwari Bhavan, Okalipuram, Bengaluru 560021', phone: '080-2345 6789', email: 'office@msblr.example',
+      address: 'Maheshwari Bhavan, Okalipuram, Bengaluru 560021', phone: '080-2345 6789', email: 'mahsabblr@gmail.com',
     },
   };
   for (const [key, value] of Object.entries(settings)) await prisma.setting.create({ data: { key, value: value as never } });

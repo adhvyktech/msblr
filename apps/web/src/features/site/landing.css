@@ -1,0 +1,148 @@
+/* Public landing page — decorative layer. Colours come ONLY from theme variables so A/B/C all work. */
+
+.ls-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(1200px 500px at 85% -10%, color-mix(in srgb, var(--gold) 55%, transparent), transparent 60%),
+    radial-gradient(900px 600px at -10% 110%, color-mix(in srgb, var(--accent) 45%, transparent), transparent 60%),
+    linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 55%, color-mix(in srgb, var(--primary) 70%, #000) 100%);
+}
+.ls-hero::after {
+  /* soft vignette for text contrast */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.18), transparent 60%);
+  pointer-events: none;
+}
+.ls-motif {
+  position: absolute;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.16);
+}
+.ls-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 56px;
+  color: var(--bg);
+}
+
+.ls-logo-wrap { position: relative; }
+.ls-logo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--gold) 70%, transparent) 0%, transparent 65%);
+  filter: blur(6px);
+  animation: ls-glow 5s ease-in-out infinite;
+}
+.ls-logo {
+  position: relative;
+  border-radius: 24%;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55), 0 0 0 6px rgba(255, 255, 255, 0.14);
+  animation: ls-float 7s ease-in-out infinite;
+}
+.ls-chip {
+  position: absolute;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  color: var(--text);
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  animation: ls-float 6s ease-in-out infinite;
+  white-space: nowrap;
+}
+.ls-chip:nth-of-type(2) { animation-delay: -2s; }
+.ls-chip:nth-of-type(3) { animation-delay: -4s; }
+.ls-chip-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Photo-style gradient tile used when there is no image */
+.ls-tile {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+.ls-tile[data-tone='0'] { background: linear-gradient(135deg, var(--primary), var(--gold)); }
+.ls-tile[data-tone='1'] { background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 45%, #fff)); }
+.ls-tile[data-tone='2'] { background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 75%, #000), var(--primary-2)); }
+.ls-tile[data-tone='3'] { background: linear-gradient(135deg, var(--gold), color-mix(in srgb, var(--gold) 50%, #fff)); }
+
+.ls-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.ls-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px -24px color-mix(in srgb, var(--primary) 55%, transparent);
+}
+
+.ls-band {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(600px 300px at 90% 0%, color-mix(in srgb, var(--gold) 45%, transparent), transparent 60%),
+    linear-gradient(120deg, var(--accent), color-mix(in srgb, var(--accent) 65%, #000));
+}
+
+.ls-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.ls-eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.ls-phone {
+  width: 230px;
+  border-radius: 38px;
+  padding: 10px;
+  background: #151312;
+  box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.6);
+  transform: rotate(-4deg);
+}
+.ls-phone-in {
+  border-radius: 30px;
+  overflow: hidden;
+  background: var(--bg);
+  height: 440px;
+}
+
+.ls-reveal { animation: ls-rise 0.7s ease both; }
+.ls-reveal-2 { animation: ls-rise 0.7s 0.12s ease both; }
+.ls-reveal-3 { animation: ls-rise 0.7s 0.24s ease both; }
+
+@keyframes ls-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes ls-glow { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
+@keyframes ls-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ls-logo, .ls-chip, .ls-logo-wrap::before, .ls-reveal, .ls-reveal-2, .ls-reveal-3 { animation: none; }
+  .ls-card:hover { transform: none; }
+}
