@@ -28,9 +28,9 @@ if [ "$(date +%u)" = "7" ]; then
 fi
 
 # retention: 14 daily sets, 8 weekly sets (2 files per set)
-ls -1t "${BACKUP_DIR}"/daily/db-* 2>/dev/null | tail -n +15 | xargs -r rm -f
-ls -1t "${BACKUP_DIR}"/daily/uploads-* 2>/dev/null | tail -n +15 | xargs -r rm -f
-ls -1t "${BACKUP_DIR}"/weekly/db-* 2>/dev/null | tail -n +9 | xargs -r rm -f
-ls -1t "${BACKUP_DIR}"/weekly/uploads-* 2>/dev/null | tail -n +9 | xargs -r rm -f
+ls -1t "${BACKUP_DIR}"/daily/db-* 2>/dev/null | tail -n +15 | xargs -r rm -f || true
+ls -1t "${BACKUP_DIR}"/daily/uploads-* 2>/dev/null | tail -n +15 | xargs -r rm -f || true
+ls -1t "${BACKUP_DIR}"/weekly/db-* 2>/dev/null | tail -n +9 | xargs -r rm -f || true
+ls -1t "${BACKUP_DIR}"/weekly/uploads-* 2>/dev/null | tail -n +9 | xargs -r rm -f || true
 
 echo "[$(date -Is)] done: ${STAMP}"
