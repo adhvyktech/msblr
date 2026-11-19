@@ -1,0 +1,39 @@
+{
+  "nav": { "title": "Login requests" },
+  "title": "My family",
+  "addMember": "Add member",
+  "headNote": "You are the head of family. Only you can edit these details.",
+  "viewerNote": "You can view your family here. Only the head of family can make changes.",
+  "headYou": "Head · You",
+  "status": { "active": "Login active", "activeViewOnly": "Login active · view only", "requested": "Activation requested", "none": "No login" },
+  "rejectedNote": "Last request was declined: {{remarks}}",
+  "editMember": "Edit {{name}}",
+  "removeMember": "Remove {{name}}",
+  "activate": "Activate login for {{name}}",
+  "needMobile": "Add a mobile number to request a login",
+  "cancelRequest": "Cancel request",
+  "withdraw": "Withdraw login",
+  "privacyHint": "Choose what other members can see:",
+  "privacyLink": "Privacy settings",
+  "toast": { "added": "Member added", "updated": "Member updated", "requested": "Login requested for {{name}}. The Sabha will review it.", "withdrawn": "Login withdrawn", "removed": "Member removed" },
+  "confirm": {
+    "removeTitle": "Remove member?", "removeBody": "{{name}} will be removed from your family. Any login will be switched off.",
+    "withdrawTitle": "Withdraw login?", "withdrawBody": "{{name}} will no longer be able to sign in. You can request a login again later.", "withdrawYes": "Withdraw"
+  },
+  "relations": {
+    "SELF": "Self", "SPOUSE": "Spouse", "SON": "Son", "DAUGHTER": "Daughter", "DAUGHTER_IN_LAW": "Daughter-in-law", "SON_IN_LAW": "Son-in-law", "FATHER": "Father",
+    "MOTHER": "Mother", "BROTHER": "Brother", "SISTER": "Sister", "GRANDSON": "Grandson", "GRANDDAUGHTER": "Granddaughter", "OTHER": "Other"
+  },
+  "form": {
+    "save": "Save member", "cancel": "Cancel", "addTitle": "Add family member", "editTitle": "Edit family member", "photo": "Photo (optional)", "photoHint": "JPG, PNG or WebP, up to 5 MB",
+    "name": "Full name", "relation": "Relation", "dob": "Date of birth", "anniversary": "Anniversary", "mobile": "Mobile", "mobileHint": "Needed only if this member will get a login",
+    "gender": "Gender", "select": "Select…", "male": "Male", "female": "Female", "other": "Other", "email": "Email", "education": "Education", "occupation": "Occupation",
+    "errName": "Enter the full name", "errRelation": "Choose the relation", "errDob": "Enter the date of birth", "errMobile": "Enter a valid 10-digit mobile number", "errEmail": "Enter a valid email address"
+  },
+  "admin": {
+    "title": "Login activation requests", "subtitle": "Heads of family request view-only logins for their members. Approve to create the login.", "person": "Member", "family": "Family",
+    "requested": "Requested", "status": "Status", "approve": "Approve", "reject": "Reject", "withdraw": "Withdraw", "tabPending": "Pending", "tabApproved": "Approved", "tabRejected": "Rejected",
+    "empty": "No requests here", "approveTitle": "Approve login?", "approveBody": "{{name}} ({{mobile}}) will get a view-only login.", "approved": "Login approved", "rejected": "Request declined",
+    "rejectTitle": "Decline request", "rejectBody": "Tell the head of family why the login for {{name}} cannot be activated.", "remarks": "Remarks", "remarksRequired": "Please enter remarks"
+  }
+}

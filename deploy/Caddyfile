@@ -1,0 +1,30 @@
+www.msblr.com {
+	redir https://msblr.com{uri} permanent
+}
+
+msblr.com {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	handle /api/* {
+		reverse_proxy api:4000
+	}
+	handle /files/* {
+		reverse_proxy api:4000
+	}
+
+	handle {
+		root * /srv/web
+		# hashed build assets can be cached for a long time
+		@assets path /assets/*
+		header @assets Cache-Control "public, max-age=31536000, immutable"
+		try_files {path} /index.html
+		file_server
+	}
+}

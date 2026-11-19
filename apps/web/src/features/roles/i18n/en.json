@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "title": "Roles & handover"
+  },
+  "title": "Roles & handover",
+  "subtitle": "Who can do what in the admin panel, and moving responsibilities to the new committee.",
+  "tabs": {
+    "staff": "Staff",
+    "roles": "Roles & permissions",
+    "handover": "Committee handover"
+  },
+  "picker": {
+    "placeholder": "Search name, mobile or membership no",
+    "hint": "Type at least 2 characters. Only registered users can be chosen.",
+    "none": "No registered user found.",
+    "error": "Could not search. Please try again.",
+    "change": "Choose a different person"
+  },
+  "staff": {
+    "intro": "People who can open the admin panel, with their roles.",
+    "assign": "Assign a role",
+    "assignBtn": "Assign role",
+    "assigned": "Role assigned",
+    "removed": "Role removed",
+    "person": "Person",
+    "roles": "Roles",
+    "lastLogin": "Last login",
+    "addRole": "Add role",
+    "role": "Role",
+    "chooseRole": "Choose a role",
+    "zone": "Zone (for content owners)",
+    "zoneHint": "Leave empty to allow all zones.",
+    "allZones": "All zones",
+    "removeRole": "Remove {{role}} from {{name}}",
+    "removeTitle": "Remove this role?",
+    "removeMsg": "{{name}} will no longer have the {{role}} role."
+  },
+  "perms": {
+    "intro": "Tick what each role is allowed to do. Changes apply the next time a person opens a page.",
+    "permission": "Permission",
+    "users": "{{count}} people",
+    "saved": "Permissions updated for {{count}} roles",
+    "reset": "Undo changes",
+    "lockNote": "Super admin always keeps access to roles and handover."
+  },
+  "perm": {
+    "members": {
+      "view_private": "See private member details",
+      "edit": "Edit members"
+    },
+    "registrations": {
+      "approve": "Approve registrations"
+    },
+    "logins": {
+      "approve": "Approve login requests"
+    },
+    "payments": {
+      "verify": "Verify payments"
+    },
+    "receipts": {
+      "view": "View receipts",
+      "export": "Export receipts"
+    },
+    "businesses": {
+      "approve": "Approve businesses"
+    },
+    "events": {
+      "post": "Post events"
+    },
+    "highlights": {
+      "post": "Post highlights"
+    },
+    "trusts": {
+      "edit": "Edit trusts"
+    },
+    "contacts": {
+      "edit": "Edit contacts"
+    },
+    "banners": {
+      "edit": "Edit banners"
+    },
+    "ads": {
+      "manage": "Manage ads",
+      "approve": "Approve ads"
+    },
+    "notifications": {
+      "send": "Send notifications"
+    },
+    "reports": {
+      "view": "View reports"
+    },
+    "audit": {
+      "view": "View activity log"
+    },
+    "roles": {
+      "manage": "Manage roles"
+    },
+    "settings": {
+      "edit": "Edit settings"
+    },
+    "dashboard": {
+      "view": "View dashboard"
+    }
+  },
+  "handover": {
+    "intro": "When the committee changes, move roles from the outgoing office bearer to the new one in a single step. The outgoing person loses access immediately.",
+    "s1": "Outgoing",
+    "s2": "Incoming",
+    "s3": "Roles",
+    "s4": "Confirm",
+    "from": "Outgoing office bearer",
+    "chooseFrom": "Choose who is handing over",
+    "to": "New office bearer",
+    "rolesLabel": "Roles to move from {{name}}",
+    "all": "Select all roles",
+    "confirmTitle": "Please check and confirm",
+    "warn": "{{name}} will be signed out of every device if this leaves them with no admin roles.",
+    "confirm": "Hand over now",
+    "success": "Handover complete",
+    "doneTitle": "Handover complete",
+    "doneBody": "{{moved}} role(s) moved to {{name}}. {{revoked}} session(s) of the previous holder were ended.",
+    "another": "Start another handover"
+  }
+}

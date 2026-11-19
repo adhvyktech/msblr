@@ -1,0 +1,7 @@
+import type { RouteObject } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+
+export const adminRoutes: RouteObject[] = [
+  { index: true, element: <Dashboard /> },
+  { path: 'dashboard', element: <Dashboard /> },
+];

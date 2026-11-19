@@ -1,0 +1,24 @@
+{
+  "nav": { "title": "Approvals" },
+  "title": "Approvals",
+  "subtitle": "{{count}} items are waiting for a decision.",
+  "tabs": { "registrations": "Registrations", "logins": "Login requests", "businesses": "Businesses", "ads": "Ads", "payments": "Payments" },
+  "hint": {
+    "registrations": "New families who applied for membership.",
+    "logins": "Family members whose head asked for a login.",
+    "businesses": "Business profiles waiting to be listed in the directory.",
+    "ads": "Advertisement creatives waiting for your preview and approval.",
+    "payments": "Payment screenshots waiting for verification."
+  },
+  "pendingCount": "{{count}} pending",
+  "none": "All clear",
+  "open": "Open list",
+  "latest": "Latest pending items",
+  "who": "From",
+  "detail": "Details",
+  "submitted": "Submitted",
+  "review": "Review",
+  "empty": "Nothing pending here.",
+  "noAccessTitle": "Nothing to approve for your role",
+  "noAccessBody": "Your role does not include any approval work."
+}

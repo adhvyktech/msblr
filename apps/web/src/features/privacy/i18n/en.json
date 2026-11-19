@@ -1,0 +1,16 @@
+{
+  "title": "Privacy settings",
+  "subtitle": "Control what other logged-in members can see.",
+  "whose": "Family member",
+  "you": "{{name}} (you)",
+  "choose": "Choose what other members can see about {{name}}.",
+  "readOnly": "These are the settings for {{name}}. Only the head of family can change them.",
+  "visible": "Visible to members",
+  "hidden": "Hidden",
+  "saved": "Privacy updated",
+  "officeNote": "The Sabha office can always see full details for official work. Every change is recorded.",
+  "fields": {
+    "mobile": "Mobile number", "whatsapp": "WhatsApp button", "address": "Home address", "email": "Email", "photo": "Photograph",
+    "dob": "Date of birth", "anniversary": "Anniversary", "business": "Business details"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "nav": { "title": "Notifications" },
+  "title": "Notifications", "markAll": "Mark all as read", "unread": "unread", "emptyTitle": "No notifications yet", "emptyBody": "Wishes, payment updates and Sabha messages will appear here.",
+  "adminTitle": "Send a notification", "adminSubtitle": "Push notification to the app, plus a ready WhatsApp message for personal follow-up.",
+  "tabCompose": "Compose", "tabHistory": "Sent",
+  "who": "Who should get it?", "aud": { "ALL": "All members", "ZONE": "A zone", "LIST": "Selected members", "SINGLE": "One member" }, "audPicked": "{{count}} selected",
+  "zone": "Zone", "zonePh": "Choose a zone", "searchPh": "Search by name, membership no. or mobile", "searching": "Searching…", "noMatch": "No member found.", "add": "Add", "selected": "Selected members",
+  "removeRecipient": "Remove {{name}}", "nobodyPicked": "Nobody selected yet.", "counting": "Counting recipients…", "willReach": "This will reach", "people": "people", "pickAudience": "Choose who should receive it.",
+  "message": "Message", "templates": "Saved templates", "tplDelete": "Delete template {{name}}", "tplDeleted": "Template deleted", "tplSaved": "Template saved", "tplName": "Template name", "saveTpl": "Save as template",
+  "titleLabel": "Title", "bodyLabel": "Message", "addHindi": "Add a Hindi version", "addHindiHint": "Members who use the app in Hindi will see this.", "titleHi": "Title (Hindi)", "bodyHi": "Message (Hindi)",
+  "schedule": "Schedule for later", "scheduleHint": "Sent automatically at the chosen time.", "sendAt": "Send at", "scheduleError": "Choose a time at least a minute from now.",
+  "sendBtn": "Send now", "scheduleBtn": "Schedule", "save": "Save", "cancel": "Cancel",
+  "confirmTitle": "Send this notification?", "confirmScheduleTitle": "Schedule this notification?", "confirmBody": "This will go to {{count}} people ({{who}}). It cannot be recalled once sent.", "confirmWhen": "Will be sent on {{when}}.",
+  "sentOk": "Sent to {{count}} people", "scheduledOk": "Scheduled for {{count}} people", "phonePreview": "Phone preview", "appName": "MSBLR E-Directory", "now": "now", "titlePh": "Your title", "bodyPh": "Your message appears here.",
+  "wa": { "title": "WhatsApp follow-up", "hint": "Open WhatsApp with the message ready. You press send for each person.", "open": "Open", "none": "No members with mobile numbers.", "writeFirst": "Write the message first.", "showAll": "Show all {{count}}" },
+  "when": "When", "recipients": "Recipients", "read": "Read", "push": "Push", "pushLine": "{{sent}} sent · {{none}} no device", "scheduledFor": "Scheduled {{when}}", "cancelled": "Scheduled message cancelled",
+  "histEmptyTitle": "Nothing sent yet", "histEmptyBody": "Messages you send will be listed here."
+}

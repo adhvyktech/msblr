@@ -1,0 +1,47 @@
+{
+  "nav": { "title": "Settings" },
+  "title": "Settings",
+  "subtitle": "Look and feel, Sabha details, payments and rules for the whole app.",
+  "saved": "Settings saved",
+  "appearance": {
+    "title": "Appearance",
+    "desc": "Pick the look of the app. It applies immediately for everyone.",
+    "failed": "Could not save the theme. The previous look was restored.",
+    "a": { "name": "A · Heritage", "desc": "Maroon and saffron, classic serif headings" },
+    "b": { "name": "B · Modern Trust", "desc": "Royal blue and amber, clean and crisp" },
+    "c": { "name": "C · Warm Community", "desc": "Logo orange and green, soft and friendly" }
+  },
+  "sabha": {
+    "title": "Sabha details",
+    "desc": "Shown on receipts and in the app.",
+    "name": "Name (English)", "nameHi": "Name (Hindi)", "phone": "Phone", "email": "Email", "address": "Address"
+  },
+  "upi": {
+    "title": "UPI payment details",
+    "desc": "Members see these when paying their subscription.",
+    "id": "UPI ID", "payee": "Payee name", "qr": "UPI QR code", "qrHint": "Upload a clear picture of the QR code (JPG, PNG or WebP, up to 5 MB)."
+  },
+  "subscription": { "title": "Subscription amount", "desc": "Yearly membership fee in rupees (financial year).", "amount": "Amount (INR)" },
+  "receipt": { "title": "Receipt prefix", "desc": "Letters at the start of every receipt number.", "prefix": "Prefix", "example": "Receipts will look like {{prefix}}/26-27/0001" },
+  "security": {
+    "title": "Security",
+    "desc": "How long a member stays signed in on a device they chose to trust.",
+    "days": "Trusted device days", "hint": "Between 1 and 365 days."
+  },
+  "business": { "title": "Businesses", "toggle": "Admin approval required for business listings", "desc": "When on, new business profiles appear in the directory only after approval." },
+  "stale": { "title": "Content reminder", "desc": "The dashboard reminds content owners when no highlight has been posted for this many days.", "days": "Remind after (days)" },
+  "wishes": {
+    "title": "Birthday and anniversary wishes",
+    "desc": "Text sent automatically on the day. Use {name} where the person's name should appear.",
+    "birthday": "Birthday message", "anniversary": "Anniversary message", "hint": "Use {name} for the person's name."
+  },
+  "zones": {
+    "title": "Zones",
+    "desc": "Areas used for families, events and zone coordinators.",
+    "name": "Zone name", "newName": "New zone", "placeholder": "e.g. Zone 6 Yelahanka", "add": "Add zone",
+    "usage": "{{families}} families · {{events}} events",
+    "inUse": "A zone that is in use cannot be deleted",
+    "delete": "Delete {{name}}", "deleteTitle": "Delete this zone?", "deleteMsg": "{{name}} will be removed. This cannot be undone.",
+    "added": "Zone added", "deleted": "Zone deleted"
+  }
+}

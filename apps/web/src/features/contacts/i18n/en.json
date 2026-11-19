@@ -1,0 +1,30 @@
+{
+  "nav": { "title": "Contacts" },
+  "title": "Important contacts",
+  "subtitle": "Tap a number to call.",
+  "emptyTitle": "No contacts yet",
+  "emptyBody": "The Sabha has not added any contacts yet.",
+  "call": "Call",
+  "sections": { "EMERGENCY": "Emergency", "SABHA": "Sabha", "OTHER": "Other" },
+  "admin": {
+    "title": "Important contacts",
+    "subtitle": "The fixed list shown to members. Emergency numbers appear first.",
+    "add": "Add contact",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saved": "Contact saved",
+    "deleted": "Contact deleted",
+    "section": "Section",
+    "name": "Name",
+    "phone": "Phone number",
+    "phoneError": "Enter a valid phone number",
+    "details": "Details",
+    "detailsHint": "Optional, e.g. timings",
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "deleteTitle": "Delete this contact?",
+    "deleteBody": "\"{{name}}\" will be removed from the list."
+  }
+}

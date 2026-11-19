@@ -1,0 +1,40 @@
+{
+  "nav": { "title": "Dashboard" },
+  "title": "Dashboard",
+  "types": { "registrations": "Registration", "logins": "Login request", "businesses": "Business", "ads": "Ad request", "payments": "Payment" },
+  "short": { "registrations": "reg.", "logins": "logins", "businesses": "biz.", "ads": "ads" },
+  "kpi": {
+    "families": "Active member families",
+    "newMonth": "+{{count}} this month",
+    "pending": "Pending approvals",
+    "payments": "Payments to verify",
+    "ads": "Live advertisements",
+    "expiring": "{{count}} ending in 7 days",
+    "users": "App users this week",
+    "usersPct": "{{percent}}% of all users"
+  },
+  "alert": {
+    "stale": "No highlight has been posted for {{days}} days (reminder after {{limit}} days). Share what happened at the latest event.",
+    "never": "No highlight has been posted yet. Share news from the latest event.",
+    "post": "Post a highlight",
+    "okTitle": "Content is fresh",
+    "ok": "The last highlight was posted {{days}} days ago."
+  },
+  "waiting": {
+    "title": "Waiting for you",
+    "type": "Type",
+    "who": "From",
+    "submitted": "Submitted",
+    "review": "Review",
+    "emptyTitle": "All caught up",
+    "emptyBody": "Nothing is waiting for your approval right now."
+  },
+  "subs": { "title": "Subscription health", "active": "Active", "due": "Due", "expired": "Expired" },
+  "logins": {
+    "title": "Logins, last 30 days",
+    "total": "{{count}} logins",
+    "web": "Website",
+    "app": "Mobile app",
+    "aria": "Bar chart of daily logins over the last 30 days, {{count}} in total"
+  }
+}

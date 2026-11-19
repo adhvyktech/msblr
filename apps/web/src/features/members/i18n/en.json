@@ -1,0 +1,49 @@
+{
+  "nav": { "title": "Members & families" },
+  "title": "Member directory",
+  "subtitle": "Find member families by name, membership number, zone, area or business.",
+  "searchPlaceholder": "Search name, MSB number, area or business",
+  "showing": "Showing {{shown}} of {{total}} families",
+  "view": "Layout",
+  "grid": "Grid view",
+  "list": "List view",
+  "call": "Call",
+  "whatsapp": "WhatsApp",
+  "directions": "Directions",
+  "viewProfile": "View profile",
+  "card": { "noBusiness": "No business listed", "members": "{{count}} family members" },
+  "filters": {
+    "title": "Filters", "zone": "Zone", "allZones": "All zones", "area": "Area", "areaHint": "Type an area", "business": "Show only business owners",
+    "clear": "Clear filters", "clearAll": "Clear search and filters"
+  },
+  "empty": { "title": "No families found", "body": "Try a different name or remove some filters. Hidden details such as mobile numbers are never searched." },
+  "profile": {
+    "back": "Back to directory", "head": "Head of family", "active": "Active member", "you": "Your family", "mobile": "Mobile", "email": "Email",
+    "address": "Address", "dob": "Date of birth", "anniversary": "Anniversary", "occupation": "Occupation", "business": "Business",
+    "family": "Family ({{count}})", "notFound": "Family not found", "notFoundBody": "This family is not available in the directory."
+  },
+  "form": {
+    "headName": "Head of family name", "dob": "Date of birth", "mobile": "Mobile (login ID)", "email": "Email", "address": "Address", "area": "Area",
+    "pincode": "Pin code", "zone": "Zone", "membershipNo": "Membership number", "membershipNoHint": "Leave empty to assign the next number automatically",
+    "select": "Select…", "city": "City", "create": "Create family",
+    "errName": "Enter the full name", "errDob": "Enter the date of birth", "errMobile": "Enter a valid 10-digit mobile number", "errEmail": "Enter a valid email address",
+    "errAddress": "Enter the address", "errArea": "Enter the area", "errPincode": "Enter a 6-digit pin code", "errZone": "Choose a zone", "errMembershipNo": "Use the format MSB-0001"
+  },
+  "admin": {
+    "title": "Members & families", "subtitle": "All families with full details. Changes are recorded in the activity log.", "membershipNo": "Membership no.", "head": "Head",
+    "zone": "Zone", "members": "Members", "status": "Status", "subscription": "Subscription", "export": "Export Excel", "import": "Import CSV", "addFamily": "Add family",
+    "addFamilyHint": "Creates an active family and the head's login directly (office data entry).", "searchPlaceholder": "Search name, mobile, MSB number, area",
+    "allStatuses": "All statuses", "allSubscriptions": "All subscriptions", "created": "Family {{no}} created", "back": "Back to members", "noNumber": "No number",
+    "person": "Person", "dob": "Date of birth", "contact": "Contact", "login": "Login", "editPerson": "Edit {{name}}", "withdrawLogin": "Withdraw login of {{name}}",
+    "editFamily": "Edit family", "validUntil": "Subscription valid until", "editPersonTitle": "Edit member", "saved": "Saved"
+  },
+  "import": {
+    "title": "Import members from CSV", "subtitle": "Add families and persons in bulk from the Sabha's existing records.", "template": "Download template",
+    "rule1": "One row per person. Rows with the same membershipNo belong to one family.",
+    "rule2": "Mark the head with relation SELF (or make headName equal to the name). Dates: YYYY-MM-DD or DD/MM/YYYY.",
+    "rule3": "A family with any invalid row is skipped completely. Existing membership numbers get the new persons added.",
+    "choose": "Choose CSV file", "noFile": "No file chosen", "upload": "Import", "done": "{{created}} created, {{errors}} errors",
+    "line": "Line", "name": "Name", "message": "Result", "s_created": "Created", "s_skipped": "Skipped", "s_error": "Error",
+    "total": "{{n}} rows", "created": "{{n}} created", "skipped": "{{n}} skipped", "errors": "{{n}} errors"
+  }
+}

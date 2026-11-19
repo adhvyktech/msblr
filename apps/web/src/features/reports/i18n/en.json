@@ -1,0 +1,34 @@
+{
+  "nav": { "title": "Reports" },
+  "title": "Reports",
+  "subtitle": "Monthly and long-term reports. Preview here, then export to Excel, CSV or PDF.",
+  "pick": "Choose a report",
+  "chooseTitle": "Choose a report",
+  "chooseBody": "Select one of the reports above to preview and export it.",
+  "from": "From date",
+  "to": "To date",
+  "month": "Month",
+  "allTime": "All time",
+  "currentSnapshot": "Shows the current position of every zone.",
+  "empty": "No data for this period.",
+  "rowCount": "{{count}} rows",
+  "types": {
+    "members": { "name": "Members", "desc": "Families with head, zone, status and subscription" },
+    "subscriptions": { "name": "Subscriptions", "desc": "Active, due and expired by zone" },
+    "receipts": { "name": "Receipts", "desc": "Amounts by month and purpose" },
+    "registrations": { "name": "Registrations", "desc": "Applications by status and month" },
+    "businesses": { "name": "Businesses", "desc": "Listings by category" },
+    "events": { "name": "Events", "desc": "Events by kind and zone" },
+    "ads": { "name": "Advertisements", "desc": "Impressions, clicks and plan price per ad" },
+    "usage": { "name": "App usage", "desc": "Logins and active users per day" },
+    "monthly-changes": { "name": "Monthly changes", "desc": "What each person changed in a month" }
+  },
+  "cols": {
+    "membershipNo": "Membership no", "head": "Head of family", "mobile": "Mobile", "zone": "Zone", "area": "Area", "persons": "Members",
+    "status": "Status", "subscription": "Subscription", "validUntil": "Valid until", "active": "Active", "due": "Due", "expired": "Expired",
+    "total": "Total", "period": "Period", "purpose": "Purpose", "count": "Count", "amount": "Amount (INR)", "month": "Month",
+    "pending": "Pending", "approved": "Approved", "rejected": "Rejected", "category": "Category", "hidden": "Hidden", "kind": "Kind",
+    "ad": "Ad", "advertiser": "Advertiser", "placement": "Placement", "impressions": "Impressions", "clicks": "Clicks", "ctr": "CTR %",
+    "spend": "Plan price (INR)", "date": "Date", "logins": "Logins", "activeUsers": "Active users", "actor": "Who", "role": "Role", "action": "Action"
+  }
+}

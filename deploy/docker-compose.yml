@@ -1,0 +1,75 @@
+# MSBLR E-Directory production stack: postgres + api + caddy (serves the web build, proxies /api and /files).
+# Usage (from the repo root):  docker compose --env-file deploy/.env.production -f deploy/docker-compose.yml up -d --build
+name: msblr
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [internal]
+
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/api.Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: [.env.production]
+    environment:
+      NODE_ENV: production
+      PORT: "4000"
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      UPLOAD_DIR: /data/uploads
+      JOBS_ENABLED: "true"
+      DEV_OTP_BYPASS: "false"
+    volumes:
+      - uploads:/data/uploads
+    networks: [internal]
+
+  web:
+    # Builds the static web app once; the files are shared with caddy through a volume.
+    build:
+      context: ..
+      dockerfile: deploy/web.Dockerfile
+    volumes:
+      - webdist:/out
+    command: ["sh", "-c", "rm -rf /out/* && cp -r /dist/. /out/"]
+    restart: "no"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on: [api, web]
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - webdist:/srv/web:ro
+      - uploads:/srv/uploads:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [internal]
+
+volumes:
+  pgdata:
+  uploads:
+  webdist:
+  caddy_data:
+  caddy_config:
+
+networks:
+  internal:

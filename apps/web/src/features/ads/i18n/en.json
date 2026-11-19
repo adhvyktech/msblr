@@ -1,0 +1,74 @@
+{
+  "nav": { "title": "Advertisements" },
+  "status": { "REQUESTED": "Requested", "CONTENT_SUBMITTED": "To review", "RETURNED": "Returned", "APPROVED": "Approved", "LIVE": "Live", "PAUSED": "Paused", "EXPIRED": "Expired", "REJECTED": "Declined" },
+  "period": { "MONTHLY": "Monthly", "QUARTERLY": "Quarterly", "HALF_YEARLY": "Half-yearly", "YEARLY": "Yearly" },
+  "payStatus": { "NONE": "Payment due", "PENDING": "Payment under check", "APPROVED": "Paid", "REJECTED": "Payment rejected" },
+  "click": { "CALL": "Call", "WHATSAPP": "WhatsApp", "WEB": "Website", "NONE": "No link" },
+  "frame": { "adAlt": "Advertisement", "adTag": "AD", "appName": "MSBLR E-Directory", "tagline": "Connect • Engage • Prosper", "noCreative": "Your ad appears here" },
+  "landing": {
+    "title": "Advertise with us", "subtitle": "Reach Maheshwari families and businesses across Bengaluru.",
+    "ctaTitle": "Start advertising", "ctaReadyTitle": "Your advertiser account is ready", "ctaReadyBody": "Request a placement or check how your ads are doing.",
+    "ctaHeadBody": "As head of family you can enable advertising with one tap.", "ctaOtherBody": "Advertising is managed by the head of the family. A business that is not a member can sign up separately.",
+    "enableCta": "Enable advertising", "enabled": "Advertising enabled", "signupCta": "Sign up as a business", "newRequest": "New request", "myAds": "My ads",
+    "whyTitle": "Why advertise here", "b1t": "A trusted community", "b1b": "Your ad is seen by verified Maheshwari member families.", "b2t": "Clearly labelled", "b2b": "Every ad carries an AD tag, so members trust the directory.",
+    "b3t": "Calls and WhatsApp", "b3b": "Members can call or message you with one tap from your ad.", "b4t": "Honest numbers", "b4b": "See impressions, viewers and taps for your own ads.",
+    "placementsTitle": "Placements and rates", "placementsHint": "Pick where your ad appears. Sizes are in pixels; rates are for the whole period.",
+    "colPlacement": "Placement", "colSize": "Size", "web": "Web", "app": "App", "both": "Web and app", "upTo": "up to {{kb}} KB", "videoUpTo": "video up to {{s}} s",
+    "howTitle": "How it works", "s1t": "Request", "s1b": "Choose a placement and a plan.", "s2t": "Upload", "s2b": "Add your ad using the sizing guide.", "s3t": "Pay and approve", "s3b": "Pay by UPI; the Sabha reviews your ad.", "s4t": "Go live", "s4b": "Track results from My ads."
+  },
+  "new": {
+    "title": "New advertising request", "stepPlacement": "Placement", "stepPlan": "Plan", "stepReview": "Review", "choosePlacement": "Where should your ad appear?", "choosePlan": "Choose a plan",
+    "months": "{{count}} month(s)", "noPlans": "No plans are available for this placement right now.", "notes": "Notes for the Sabha (optional)", "notesPh": "For example: Diwali offer, start from 1 November",
+    "review": "Review your request", "placement": "Placement", "size": "Size", "plan": "Plan", "rate": "Rate", "notesShort": "Notes", "afterSubmit": "Next you will upload your ad and pay by UPI. Nothing goes live until the Sabha approves it.",
+    "back": "Back", "nextPlan": "Next: choose a plan", "nextReview": "Next: review", "submit": "Submit request", "created": "Request created. Now upload your ad.",
+    "needAccountTitle": "Advertiser account needed", "needAccountBody": "Enable advertising first to request a placement.", "goAdvertise": "Go to Advertise"
+  },
+  "req": {
+    "title": "Upload your ad", "sizingTitle": "Sizing guide · {{name}}", "sizeLine": "Size {{size}} · {{formats}} up to {{kb}} KB", "videoLine": "Video: MP4, up to {{s}} seconds, 20 MB",
+    "textLine": "A single text line can be used instead of an image.", "safeLine": "Keep text and logo inside the dashed safe area.", "file": "Ad image or video", "fileOptional": "Ad image (optional)",
+    "fileHint": "Needs the same proportions as {{size}}.", "adTitle": "Ad title", "adTitlePh": "Your business or offer", "textLineLabel": "Loading screen text line", "textLineHint": "Short line shown on the app loading screen.",
+    "previewTitle": "Preview", "previewHint": "How your ad will look. Keep important parts inside the dashed box.", "clickTitle": "Where should taps go?", "clickPhone": "Mobile number", "clickWeb": "Website link",
+    "submit": "Submit to Sabha for review", "resubmit": "Update and resubmit", "submitted": "Submitted for review", "submittedTitle": "Your submitted ad", "runs": "Runs from {{from}} to {{to}}",
+    "waitReview": "The Sabha will review your ad shortly. You will get a notification.", "returnedTitle": "Changes needed", "rejectedTitle": "Request declined"
+  },
+  "pay": {
+    "title": "Payment", "due": "{{period}} plan:", "upiHelp": "Pay this amount by UPI, then enter the details below.", "upiMissing": "UPI details not set yet", "qrAlt": "UPI QR code",
+    "amount": "Amount paid (₹)", "paidOn": "Paid on", "utr": "UTR / transaction ID", "utrHint": "12-digit reference from your UPI app", "screenshot": "Payment screenshot", "submit": "Send payment details",
+    "sent": "Payment details sent for verification", "verified": "Payment verified. Thank you!", "purpose": "Advertisement"
+  },
+  "mine": {
+    "title": "My ads", "subtitle": "Requests, status and results for your ads.", "emptyTitle": "No ads yet", "emptyBody": "Request your first placement to get started.", "remarks": "Sabha remarks",
+    "requestedOn": "Requested on {{date}}", "impressions": "Impressions", "viewers": "Viewers", "clicks": "Taps", "weekly": "Impressions per week", "upload": "Upload ad", "fix": "Fix and resubmit", "details": "View details"
+  },
+  "signup": {
+    "title": "Advertiser sign-up", "subtitle": "For businesses that are not Sabha members.", "business": "Business name", "contact": "Contact person", "mobile": "Mobile number", "email": "Email (optional)",
+    "emailHint": "We use it only for ad-related messages.", "sendOtp": "Send OTP", "otp": "6-digit OTP", "otpSent": "OTP sent to {{mobile}}", "create": "Verify and create account", "change": "Change details",
+    "errName": "Enter the business name", "errContact": "Enter the contact person name", "errMobile": "Enter a valid 10-digit mobile number", "errEmail": "Enter a valid email", "errCode": "Enter the 6-digit code",
+    "haveAccount": "Already have an account?", "login": "Log in", "backToAdvertise": "Back to Advertise"
+  },
+  "admin": {
+    "title": "Advertisements", "subtitle": "Review requests, schedule ads and track results.", "plansBtn": "Plans and sizes", "analyticsBtn": "Analytics", "all": "All", "advertiser": "Advertiser", "placement": "Placement",
+    "plan": "Plan", "payment": "Payment", "status": "Status", "updated": "Updated", "empty": "No requests here."
+  },
+  "review": {
+    "previewTitle": "Preview", "tab": { "webHome": "Web home", "appHome": "App home", "side": "Side banner", "loading": "Loading screen" }, "safeNote": "Dashed box = safe area for text and logo", "noContent": "No content uploaded yet.",
+    "notes": "Advertiser notes", "lastRemarks": "Last remarks sent", "advertiser": "Advertiser", "checks": "Checks", "chkDims": "Size {{got}} px (needs {{want}})", "chkSize": "File {{got}} KB (max {{max}} KB)",
+    "chkFormat": "Format {{fmt}} (allowed {{allowed}})", "chkText": "Text line provided", "chkNoFile": "No file or text uploaded", "chkClick": "Taps go to {{type}}: {{value}}", "chkNoClick": "No tap link set",
+    "chkPaid": "Payment verified", "chkUnpaid": "Payment not verified", "proof": "Proof", "verifyHint": "Verify the payment from the Payments screen; the ad goes live once it is verified.",
+    "schedule": "Schedule and priority", "startsAt": "Starts on", "endsAt": "Ends on", "endAuto": "Leave blank to end on {{date}} (from the plan)", "endError": "End date must be after the start date", "priority": "Priority",
+    "p1": "1 · Normal", "p2": "2 · High", "p3": "3 · Top", "shuffle": "Shuffle with other ads", "shuffleHint": "Off = this ad is always shown first.", "markPaid": "Mark as paid (payment verified outside the system)",
+    "approve": "Approve and schedule", "approved": "Approved", "return": "Return with remarks", "reject": "Decline", "returnTitle": "Return to advertiser", "rejectTitle": "Decline request",
+    "remarks": "Remarks for the advertiser", "remarksHint": "Explain what to fix. The advertiser sees this.", "cancel": "Cancel", "decided": "Advertiser notified",
+    "waitingAdvertiser": "Waiting for the advertiser to upload their ad.", "returnedWaiting": "Returned. Waiting for the advertiser to resubmit.", "manage": "Manage live ad", "manageOnly": "Only ad managers can change live ads.",
+    "saveSchedule": "Save changes", "saved": "Saved", "pause": "Pause", "resume": "Resume", "renew": "Renew", "renewTitle": "Renew ad", "newEnd": "New end date", "renewHint": "Currently ends on {{date}}", "renewed": "Ad renewed",
+    "replace": "Replace creative", "replaceTitle": "Replace the ad creative", "results": "Results so far"
+  },
+  "plans": {
+    "title": "Plans and sizes", "subtitle": "Rates per placement and period, and the sizing guide advertisers see.", "price": "Price (₹)", "active": "Offered", "save": "Save", "saved": "Saved",
+    "sizes": "Sizes", "width": "Width (px)", "height": "Height (px)", "maxKb": "Max file size (KB)", "videoS": "Max video (seconds)", "placementActive": "Placement active", "inactive": "Inactive"
+  },
+  "analytics": {
+    "title": "Ad analytics", "subtitle": "Impressions, viewers, taps and spend per ad.", "from": "From", "to": "To", "rangeError": "Start date must be before end date", "ad": "Ad", "runs": "Runs", "ctr": "Tap rate",
+    "spend": "Paid", "spendHint": "Verified payments", "viewersHint": "Daily unique viewers added up", "empty": "No ads in this range."
+  }
+}
