@@ -9,7 +9,7 @@ export default defineConfig({
     hookTimeout: 120_000,
     env: {
       NODE_ENV: 'test',
-      DATABASE_URL: 'postgresql://postgres:postgres@localhost:54329/msblr_test',
+      DATABASE_URL: process.env.TEST_DATABASE_URL ?? 'postgresql://postgres:postgres@localhost:54329/msblr_test',
       JWT_SECRET: 'test-secret-test-secret-test-secret-123',
       UPLOAD_DIR: './uploads-test',
       DEV_OTP_BYPASS: 'true',
