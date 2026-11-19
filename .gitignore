@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.devdb/
+uploads/
+.env
+.env.*
+!.env.example
+*.log
+coverage/
+.DS_Store
+apps/web/dev-dist/
