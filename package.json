@@ -1,0 +1,23 @@
+{
+  "name": "msblr-edirectory",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "db:start": "node scripts/dev-db.mjs",
+    "db:migrate": "npm run migrate -w @msblr/api",
+    "db:seed": "npm run seed -w @msblr/api",
+    "db:reset": "npm run reset -w @msblr/api",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @msblr/api\" \"npm run dev -w @msblr/web\"",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "10.0.7",
+    "embedded-postgres": "18.6.0-beta.19"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "welcome": "Welcome",
+  "mobileHelp": "Log in with your mobile number. No password needed.",
+  "mobileLabel": "Mobile number",
+  "smsNote": "We will send a one-time password (OTP) by SMS.",
+  "sendOtp": "Send OTP",
+  "newHere": "New to the Sabha directory?",
+  "registerLink": "Register your family",
+  "enterOtp": "Enter OTP",
+  "sentTo": "Sent to {{mobile}}",
+  "change": "Change number",
+  "digit": "OTP digit {{n}}",
+  "resendIn": "Resend OTP in {{time}}",
+  "didntGet": "Didn't get the code?",
+  "resend": "Resend OTP",
+  "keepLoggedIn": "Keep me logged in on this phone",
+  "keepLoggedInHint": "Skip the OTP on this device for 30 days",
+  "verify": "Verify and log in",
+  "errors": { "generic": "Something went wrong. Please try again.", "invalidMobile": "Enter a valid 10-digit mobile number" },
+  "notRegistered": { "title": "This number is not registered", "body": "We could not find this mobile number in the Sabha directory. If your family is not yet a member, please register first." },
+  "loginPending": { "title": "Login not active yet", "body": "{{name}} is a family member under {{head}} ({{no}}). The head of the family needs to request a login for you, and the Sabha will approve it." },
+  "regPending": { "title": "Registration under review", "body": "Your family registration has been received and is waiting for approval. You can log in once the Sabha approves it." }
+}

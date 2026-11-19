@@ -11,25 +11,122 @@ datasource db {
 }
 
 // ---------- enums ----------
-enum FamilyStatus { PENDING ACTIVE REJECTED INACTIVE }
-enum SubscriptionStatus { ACTIVE DUE EXPIRED }
-enum Relation { SELF SPOUSE SON DAUGHTER DAUGHTER_IN_LAW SON_IN_LAW FATHER MOTHER BROTHER SISTER GRANDSON GRANDDAUGHTER OTHER }
-enum Gender { MALE FEMALE OTHER }
-enum UserStatus { ACTIVE DISABLED }
-enum RequestStatus { PENDING APPROVED REJECTED }
-enum PaymentKind { SUBSCRIPTION AD DONATION }
-enum PaymentStatus { PENDING APPROVED REJECTED }
-enum FileVisibility { PUBLIC MEMBERS PRIVATE }
-enum BusinessStatus { PENDING APPROVED HIDDEN REJECTED }
-enum EventKind { AGM EC SOCIAL RELIGIOUS CULTURAL SPORTS OTHER }
-enum PublishStatus { DRAFT PUBLISHED }
-enum BannerKind { BANNER AD VIDEO }
-enum AdPlatform { WEB APP BOTH }
-enum AdPeriod { MONTHLY QUARTERLY HALF_YEARLY YEARLY }
-enum AdRequestStatus { REQUESTED CONTENT_SUBMITTED RETURNED APPROVED LIVE PAUSED EXPIRED REJECTED }
-enum ClickType { CALL WHATSAPP WEB NONE }
-enum Audience { ALL ZONE LIST SINGLE }
-enum WishKind { BIRTHDAY ANNIVERSARY }
+enum FamilyStatus {
+  PENDING
+  ACTIVE
+  REJECTED
+  INACTIVE
+}
+enum SubscriptionStatus {
+  ACTIVE
+  DUE
+  EXPIRED
+}
+enum Relation {
+  SELF
+  SPOUSE
+  SON
+  DAUGHTER
+  DAUGHTER_IN_LAW
+  SON_IN_LAW
+  FATHER
+  MOTHER
+  BROTHER
+  SISTER
+  GRANDSON
+  GRANDDAUGHTER
+  OTHER
+}
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+enum UserStatus {
+  ACTIVE
+  DISABLED
+}
+enum RequestStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+enum PaymentKind {
+  SUBSCRIPTION
+  AD
+  DONATION
+}
+enum PaymentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+enum FileVisibility {
+  PUBLIC
+  MEMBERS
+  PRIVATE
+}
+enum BusinessStatus {
+  PENDING
+  APPROVED
+  HIDDEN
+  REJECTED
+}
+enum EventKind {
+  AGM
+  EC
+  SOCIAL
+  RELIGIOUS
+  CULTURAL
+  SPORTS
+  OTHER
+}
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+}
+enum BannerKind {
+  BANNER
+  AD
+  VIDEO
+}
+enum AdPlatform {
+  WEB
+  APP
+  BOTH
+}
+enum AdPeriod {
+  MONTHLY
+  QUARTERLY
+  HALF_YEARLY
+  YEARLY
+}
+enum AdRequestStatus {
+  REQUESTED
+  CONTENT_SUBMITTED
+  RETURNED
+  APPROVED
+  LIVE
+  PAUSED
+  EXPIRED
+  REJECTED
+}
+enum ClickType {
+  CALL
+  WHATSAPP
+  WEB
+  NONE
+}
+enum Audience {
+  ALL
+  ZONE
+  LIST
+  SINGLE
+}
+enum WishKind {
+  BIRTHDAY
+  ANNIVERSARY
+}
 
 // ---------- reference ----------
 model Zone {

@@ -1,0 +1,30 @@
+{
+  "appName": "MSBLR E-Directory",
+  "tagline": "Connect • Engage • Prosper",
+  "sabhaName": "Maheshwari Sabha, Bengaluru",
+  "actions": {
+    "save": "Save", "cancel": "Cancel", "back": "Back", "next": "Next", "submit": "Submit", "close": "Close", "retry": "Try again",
+    "edit": "Edit", "delete": "Delete", "confirm": "Confirm", "approve": "Approve", "reject": "Reject", "search": "Search",
+    "view": "View", "download": "Download", "upload": "Upload", "add": "Add", "remove": "Remove", "logout": "Log out", "login": "Log in",
+    "seeAll": "See all", "continue": "Continue", "yes": "Yes", "no": "No", "clear": "Clear", "apply": "Apply", "export": "Export", "call": "Call",
+    "whatsapp": "WhatsApp", "directions": "Directions", "share": "Share", "send": "Send"
+  },
+  "nav": { "home": "Home", "members": "Members", "business": "Business", "events": "Events", "trusts": "Trusts", "contacts": "Contacts", "me": "Me", "notifications": "Notifications", "admin": "Admin panel", "overview": "Overview" },
+  "groups": { "overview": "Overview", "people": "People", "content": "Content", "control": "Control" },
+  "states": {
+    "loading": "Loading…", "emptyTitle": "Nothing here yet", "emptyBody": "There is nothing to show right now.",
+    "errorTitle": "Something went wrong", "errorBody": "We could not load this. Please try again.",
+    "noResults": "No results found"
+  },
+  "forms": { "required": "Required", "optional": "Optional", "chooseFile": "Choose a file", "dragDrop": "Drag and drop, or tap to choose", "uploading": "Uploading…", "uploaded": "Uploaded", "select": "Select…", "hiddenByMember": "Hidden by member", "dateFormat": "Date", "invalid": "Please check this field" },
+  "table": { "page": "Page {{page}} of {{pages}}", "total": "{{count}} records", "prev": "Previous", "next": "Next", "rowsEmpty": "No records" },
+  "lang": { "switch": "Language", "en": "EN", "hi": "हिं" },
+  "ad": "AD",
+  "search": { "placeholder": "Search members, business, events" },
+  "status": { "ACTIVE": "Active", "DUE": "Due", "EXPIRED": "Expired", "PENDING": "Pending", "APPROVED": "Approved", "REJECTED": "Rejected", "INACTIVE": "Inactive" },
+  "forbidden": { "title": "No access", "body": "You do not have permission to open this page." },
+  "notFound": { "title": "Page not found", "body": "The page you are looking for does not exist or has moved.", "home": "Go to Home" },
+  "toast": { "saved": "Saved", "deleted": "Deleted", "error": "Something went wrong" },
+  "menu": { "profile": "My profile", "adminPanel": "Admin panel", "memberApp": "Member app", "openMenu": "Open menu", "closeMenu": "Close menu", "account": "Account menu" },
+  "notifications": { "bell": "Notifications", "unread": "{{count}} unread" }
+}

@@ -1,0 +1,30 @@
+{
+  "home": {
+    "greeting": "नमस्ते, {{name}} जी",
+    "activeFamilies": "सक्रिय सदस्य परिवार",
+    "subscriptionDue": "आपकी सदस्यता पर ध्यान देने की ज़रूरत है।",
+    "payNow": "अभी भुगतान करें"
+  },
+  "me": {
+    "title": "मेरा",
+    "head": "परिवार के मुखिया",
+    "member": "परिवार के सदस्य",
+    "subscription": "सदस्यता",
+    "validUntil": "{{date}} तक मान्य",
+    "payNow": "अभी भुगतान करें",
+    "languageHint": "अंग्रेज़ी या हिंदी चुनें",
+    "links": {
+      "family": "मेरा परिवार",
+      "privacy": "गोपनीयता",
+      "subscription": "सदस्यता",
+      "business": "मेरा व्यापार",
+      "advertise": "हमारे साथ विज्ञापन करें"
+    }
+  },
+  "admin": {
+    "title": "एडमिन पैनल",
+    "welcome": "स्वागत है, {{name}}",
+    "yourAccess": "आपकी पहुँच",
+    "placeholder": "डैशबोर्ड यहाँ दिखाई देगा।"
+  }
+}

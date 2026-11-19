@@ -1,0 +1,30 @@
+{
+  "appName": "MSBLR ई-डायरेक्टरी",
+  "tagline": "जुड़ें • सहभागी बनें • समृद्ध हों",
+  "sabhaName": "माहेश्वरी सभा, बेंगलुरु",
+  "actions": {
+    "save": "सहेजें", "cancel": "रद्द करें", "back": "वापस", "next": "आगे", "submit": "जमा करें", "close": "बंद करें", "retry": "फिर से प्रयास करें",
+    "edit": "संपादित करें", "delete": "हटाएं", "confirm": "पुष्टि करें", "approve": "स्वीकृत करें", "reject": "अस्वीकार करें", "search": "खोजें",
+    "view": "देखें", "download": "डाउनलोड", "upload": "अपलोड", "add": "जोड़ें", "remove": "हटाएं", "logout": "लॉग आउट", "login": "लॉग इन",
+    "seeAll": "सभी देखें", "continue": "जारी रखें", "yes": "हाँ", "no": "नहीं", "clear": "साफ़ करें", "apply": "लागू करें", "export": "एक्सपोर्ट", "call": "कॉल करें",
+    "whatsapp": "व्हाट्सऐप", "directions": "रास्ता", "share": "साझा करें", "send": "भेजें"
+  },
+  "nav": { "home": "होम", "members": "सदस्य", "business": "व्यापार", "events": "कार्यक्रम", "trusts": "ट्रस्ट", "contacts": "संपर्क", "me": "मेरा", "notifications": "सूचनाएं", "admin": "एडमिन पैनल", "overview": "सारांश" },
+  "groups": { "overview": "सारांश", "people": "लोग", "content": "सामग्री", "control": "नियंत्रण" },
+  "states": {
+    "loading": "लोड हो रहा है…", "emptyTitle": "अभी यहाँ कुछ नहीं है", "emptyBody": "अभी दिखाने के लिए कुछ नहीं है।",
+    "errorTitle": "कुछ गड़बड़ हो गई", "errorBody": "यह लोड नहीं हो सका। कृपया फिर से प्रयास करें।",
+    "noResults": "कोई परिणाम नहीं मिला"
+  },
+  "forms": { "required": "आवश्यक", "optional": "वैकल्पिक", "chooseFile": "फ़ाइल चुनें", "dragDrop": "खींचकर छोड़ें, या चुनने के लिए टैप करें", "uploading": "अपलोड हो रहा है…", "uploaded": "अपलोड हो गया", "select": "चुनें…", "hiddenByMember": "सदस्य द्वारा छिपाया गया", "dateFormat": "तारीख", "invalid": "कृपया इस फ़ील्ड की जाँच करें" },
+  "table": { "page": "पृष्ठ {{page}} / {{pages}}", "total": "{{count}} रिकॉर्ड", "prev": "पिछला", "next": "अगला", "rowsEmpty": "कोई रिकॉर्ड नहीं" },
+  "lang": { "switch": "भाषा", "en": "EN", "hi": "हिं" },
+  "ad": "विज्ञापन",
+  "search": { "placeholder": "सदस्य, व्यापार, कार्यक्रम खोजें" },
+  "status": { "ACTIVE": "सक्रिय", "DUE": "देय", "EXPIRED": "समाप्त", "PENDING": "लंबित", "APPROVED": "स्वीकृत", "REJECTED": "अस्वीकृत", "INACTIVE": "निष्क्रिय" },
+  "forbidden": { "title": "प्रवेश नहीं", "body": "इस पृष्ठ को खोलने की अनुमति आपके पास नहीं है।" },
+  "notFound": { "title": "पृष्ठ नहीं मिला", "body": "आप जो पृष्ठ खोज रहे हैं वह मौजूद नहीं है या हटा दिया गया है।", "home": "होम पर जाएं" },
+  "toast": { "saved": "सहेजा गया", "deleted": "हटाया गया", "error": "कुछ गड़बड़ हो गई" },
+  "menu": { "profile": "मेरी प्रोफ़ाइल", "adminPanel": "एडमिन पैनल", "memberApp": "सदस्य ऐप", "openMenu": "मेनू खोलें", "closeMenu": "मेनू बंद करें", "account": "खाता मेनू" },
+  "notifications": { "bell": "सूचनाएं", "unread": "{{count}} अपठित" }
+}

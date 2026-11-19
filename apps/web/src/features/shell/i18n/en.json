@@ -1,0 +1,30 @@
+{
+  "home": {
+    "greeting": "Namaste, {{name}} ji",
+    "activeFamilies": "active member families",
+    "subscriptionDue": "Your subscription needs attention.",
+    "payNow": "Pay now"
+  },
+  "me": {
+    "title": "Me",
+    "head": "Head of family",
+    "member": "Family member",
+    "subscription": "Subscription",
+    "validUntil": "valid until {{date}}",
+    "payNow": "Pay now",
+    "languageHint": "Choose English or Hindi",
+    "links": {
+      "family": "My family",
+      "privacy": "Privacy",
+      "subscription": "Subscription",
+      "business": "My business",
+      "advertise": "Advertise with us"
+    }
+  },
+  "admin": {
+    "title": "Admin panel",
+    "welcome": "Welcome, {{name}}",
+    "yourAccess": "Your access",
+    "placeholder": "The dashboard will appear here."
+  }
+}
