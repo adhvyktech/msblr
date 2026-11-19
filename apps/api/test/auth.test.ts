@@ -6,9 +6,13 @@ import { env } from '../src/lib/env';
 import { setSmsProvider, ConsoleSmsProvider } from '../src/lib/sms';
 import { requirePerm } from '../src/lib/auth';
 import { buildApp } from '../src/server';
+import { setSetting } from '../src/lib/settings';
 
 let app: FastifyInstance;
 beforeAll(async () => {
+  // Other suites share this DB and may change settings; restore the seeded values this file relies on.
+  await setSetting('trustedDeviceDays', 30);
+  await setSetting('upi', { id: 'msblr@upi', payeeName: 'Maheshwari Sabha Bengaluru', qrFileId: null });
   const a = await buildApp();
   a.get('/api/_t/needs-settings', { preHandler: requirePerm('settings.edit') }, async () => ({ data: 'ok' }));
   await a.ready();
@@ -53,7 +57,7 @@ describe('OTP flow', () => {
     expect(nr.statusCode).toBe(404);
     expect(nr.json().error.code).toBe('NOT_REGISTERED');
 
-    const akash = await prisma.person.findFirstOrThrow({ where: { name: 'Akash Rathi' } });
+    const akash = await prisma.person.findFirstOrThrow({ where: { name: 'Akash Rathi', family: { membershipNo: 'MSB-0412' } } });
     await prisma.person.update({ where: { id: akash.id }, data: { mobile: '9812340000' } });
     const lp = await post('/api/auth/otp/request', { mobile: '9812340000' });
     expect(lp.statusCode).toBe(403);
