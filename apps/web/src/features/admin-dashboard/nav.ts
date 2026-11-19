@@ -1,5 +1,4 @@
-import { LayoutDashboard } from 'lucide-react';
+import type { AdminNavItem } from '@/components/layout/AdminLayout';
 
-export const adminNav = [
-  { to: '/admin/dashboard', labelKey: 'admin-dashboard:nav.title', icon: LayoutDashboard, perm: 'dashboard.view', group: 'overview' as const, order: 0 },
-];
+// The Dashboard link is rendered first by AdminLayout (to "/admin"), so no extra sidebar entry here.
+export const adminNav: AdminNavItem[] = [];

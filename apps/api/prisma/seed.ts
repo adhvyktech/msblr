@@ -308,7 +308,9 @@ async function main() {
     prisma.adRequest.create({ data: { advertiserId, placementId: placements[code]!.id, planId: placements[code]!.planIds[periodIdx]!, status, notes, remarks } });
   const reqMundra = await mkAdRequest(advMundra.id, 'WEB_SIDE', 2, 'LIVE');
   const reqBhutada = await mkAdRequest(advBhutada.id, 'HOME_CAROUSEL', 1, 'LIVE');
-  await mkAdRequest(advBhutada.id, 'APP_CARD', 0, 'CONTENT_SUBMITTED', 'Diwali offer card');
+  const reqBhutadaCard = await mkAdRequest(advBhutada.id, 'APP_CARD', 0, 'CONTENT_SUBMITTED', 'Diwali offer card');
+  // Submitted content must have an Ad row, otherwise admin approval has nothing to schedule.
+  await prisma.ad.create({ data: { requestId: reqBhutadaCard.id, title: 'Bhutada Sweets — Diwali gift boxes, 15% off for members', clickType: 'WHATSAPP', clickValue: '9886600011', priority: 1 } });
   await mkAdRequest(advMundra.id, 'APP_LOADING', 0, 'REQUESTED', 'Text line for loading screen');
   await mkAdRequest(advMundra.id, 'WEB_FOOTER', 0, 'RETURNED', undefined, 'Image is blurry. Please upload 1200 × 120 px.');
   await mkAdRequest(advBhutada.id, 'WEB_INLINE', 0, 'EXPIRED');

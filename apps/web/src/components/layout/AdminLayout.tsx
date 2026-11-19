@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { LayoutDashboard, Menu, type LucideIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { useQuery } from '@tanstack/react-query';
+import { api } from '@/lib/api';
 import { cn } from '@/lib/cn';
 import { useAuth } from '@/lib/auth';
 import { Drawer } from '@/components/ui/overlay';
@@ -33,17 +35,45 @@ function Sidebar({ onNavigate }: { onNavigate?: () => void }) {
     const visible = ALL_NAV.filter((n) => !n.perm || can(...(Array.isArray(n.perm) ? n.perm : [n.perm])));
     return GROUPS.map((g) => ({ g, items: visible.filter((n) => n.group === g).sort((a, b) => a.order - b.order) })).filter((x) => x.items.length);
   }, [can]);
+  // Pending-approval badges (sidebar). Keys match /api/approvals/counts.
+  const counts = useQuery({
+    queryKey: ['approvals', 'counts'],
+    queryFn: () => api.get<Record<string, number>>('/api/approvals/counts'),
+    refetchInterval: 60_000,
+    retry: false,
+  });
+  const badgeFor = (to: string): number => {
+    const c = counts.data;
+    if (!c) return 0;
+    const map: Record<string, string> = {
+      '/admin/approvals': 'total',
+      '/admin/registrations': 'registrations',
+      '/admin/logins': 'logins',
+      '/admin/businesses': 'businesses',
+      '/admin/ads': 'ads',
+      '/admin/payments': 'payments',
+    };
+    const k = map[to];
+    return k ? c[k] ?? 0 : 0;
+  };
   const link = ({ isActive }: { isActive: boolean }) =>
     cn('flex min-h-[44px] items-center gap-3 rounded-xl px-3 text-[15px] transition-colors', isActive ? 'bg-white/15 font-semibold text-white' : 'text-white/80 hover:bg-white/10');
   return (
     <nav aria-label="Admin" className="flex flex-col gap-0.5 p-3">
-      <NavLink to="/admin" end className={link} onClick={onNavigate}><LayoutDashboard size={19} aria-hidden />{t('nav.overview')}</NavLink>
+      <NavLink to="/admin" end className={link} onClick={onNavigate}><LayoutDashboard size={19} aria-hidden />{t('admin-dashboard:nav.title')}</NavLink>
       {groups.map(({ g, items }) => (
         <div key={g}>
           <p className="mx-3 mb-1 mt-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/50">{t(`groups.${g}`)}</p>
-          {items.map((n) => (
-            <NavLink key={n.to} to={n.to} className={link} onClick={onNavigate}><n.icon size={19} aria-hidden />{t(n.labelKey)}</NavLink>
-          ))}
+          {items.map((n) => {
+            const b = badgeFor(n.to);
+            return (
+              <NavLink key={n.to} to={n.to} className={link} onClick={onNavigate}>
+                <n.icon size={19} aria-hidden />
+                <span className="flex-1">{t(n.labelKey)}</span>
+                {b > 0 && <span className="rounded-full bg-accent px-2 text-[11px] font-bold leading-5 text-white" aria-label={`${b} pending`}>{b}</span>}
+              </NavLink>
+            );
+          })}
         </div>
       ))}
     </nav>
