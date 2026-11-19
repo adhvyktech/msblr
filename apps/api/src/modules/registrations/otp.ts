@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { env, isProd } from '../../lib/env';
 import { prisma } from '../../lib/prisma';
 import { httpError } from '../../lib/errors';
-import { getSmsProvider, DEV_OTP } from '../../lib/sms';
+import { getSmsProvider, DEV_OTP, otpBypassFor, otpCodeFor } from '../../lib/sms';
 
 // Same mechanism as /api/auth/otp (OtpRequest rows, HMAC hash, 5 min validity, 5 attempts, 3 sends / 15 min),
 // but for people who are not registered yet. A successful confirm returns a short-lived signed token.
@@ -26,17 +26,17 @@ export async function requestMobileOtp(mobile: string, ip?: string) {
     throw httpError(429, 'OTP_SEND_LIMIT', `Too many OTP requests. Please try again in ${wait} minute${wait > 1 ? 's' : ''}.`, { retryAfterMin: wait });
   }
   const last = sends[0];
-  if (last && Date.now() - last.createdAt.getTime() < RESEND_AFTER_SEC * 1000 && !env.DEV_OTP_BYPASS) {
+  if (last && Date.now() - last.createdAt.getTime() < RESEND_AFTER_SEC * 1000 && !otpBypassFor(mobile)) {
     throw httpError(429, 'OTP_TOO_SOON', `Please wait ${RESEND_AFTER_SEC} seconds before requesting another OTP.`);
   }
-  const code = env.DEV_OTP_BYPASS ? DEV_OTP : String(crypto.randomInt(100000, 1000000));
+  const code = otpCodeFor(mobile, () => String(crypto.randomInt(100000, 1000000)));
   await prisma.otpRequest.create({ data: { mobile, otpHash: hashOtp(mobile, code), expiresAt: new Date(Date.now() + OTP_TTL_MS), ip } });
   await getSmsProvider().sendOtp(mobile, code);
   return { sent: true, expiresInSec: OTP_TTL_MS / 1000, resendAfterSec: RESEND_AFTER_SEC, sendsLeft: MAX_SENDS - sends.length - 1 };
 }
 
 export async function confirmMobileOtp(mobile: string, code: string): Promise<string> {
-  const bypass = env.DEV_OTP_BYPASS && !isProd && code === DEV_OTP;
+  const bypass = otpBypassFor(mobile) && code === DEV_OTP;
   if (!bypass) {
     const otp = await prisma.otpRequest.findFirst({ where: { mobile, consumed: false, expiresAt: { gt: new Date() } }, orderBy: { createdAt: 'desc' } });
     if (!otp) throw httpError(400, 'OTP_EXPIRED', 'This OTP has expired. Please request a new one.');

@@ -1,5 +1,5 @@
 # API image. Build context = repo root.
-FROM node:20-bookworm-slim AS build
+FROM node:22-bookworm-slim AS build
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 WORKDIR /repo
 COPY package.json package-lock.json tsconfig.base.json ./
@@ -8,9 +8,11 @@ COPY apps/api/package.json ./apps/api/package.json
 COPY apps/web/package.json ./apps/web/package.json
 RUN npm ci --workspaces --include-workspace-root
 COPY apps/api ./apps/api
+# receipt PDFs embed the Sabha logo from the web public folder
+COPY apps/web/public ./apps/web/public
 RUN npx prisma generate --schema apps/api/prisma/schema.prisma
 
-FROM node:20-bookworm-slim AS run
+FROM node:22-bookworm-slim AS run
 RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 ENV NODE_ENV=production
 WORKDIR /repo

@@ -12,6 +12,7 @@ const schema = z.object({
   DEV_OTP_BYPASS: z.enum(['true', 'false']).default('false').transform((v) => v === 'true'),
   JOBS_ENABLED: z.enum(['true', 'false']).default('false').transform((v) => v === 'true'),
   FCM_SERVICE_ACCOUNT: z.string().optional(),
+  DEMO_OTP_MOBILES: z.string().optional(),
 });
 
 const parsed = schema.safeParse(process.env);

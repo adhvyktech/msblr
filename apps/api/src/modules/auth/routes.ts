@@ -6,7 +6,7 @@ import { env, isProd } from '../../lib/env';
 import { parse } from '../../lib/parse';
 import { httpError } from '../../lib/errors';
 import { audit } from '../../lib/audit';
-import { getSmsProvider, DEV_OTP } from '../../lib/sms';
+import { getSmsProvider, DEV_OTP, otpBypassFor, otpCodeFor } from '../../lib/sms';
 import {
   ACCESS_TTL_SEC, REFRESH_COOKIE, authenticate, createSession, hashToken, loadAuthUser, rotateRefresh, signAccess,
 } from '../../lib/auth';
@@ -66,10 +66,10 @@ const routes: FastifyPluginAsync = async (app) => {
       throw httpError(429, 'OTP_SEND_LIMIT', `Too many OTP requests. Please try again in ${wait} minute${wait > 1 ? 's' : ''}.`, { retryAfterMin: wait });
     }
     const last = sends[0];
-    if (last && Date.now() - last.createdAt.getTime() < RESEND_AFTER_SEC * 1000 && !env.DEV_OTP_BYPASS) {
+    if (last && Date.now() - last.createdAt.getTime() < RESEND_AFTER_SEC * 1000 && !otpBypassFor(mobile)) {
       throw httpError(429, 'OTP_TOO_SOON', `Please wait ${RESEND_AFTER_SEC} seconds before requesting another OTP.`);
     }
-    const code = env.DEV_OTP_BYPASS ? DEV_OTP : String(crypto.randomInt(100000, 1000000));
+    const code = otpCodeFor(mobile, () => String(crypto.randomInt(100000, 1000000)));
     await prisma.otpRequest.create({
       data: { mobile, otpHash: hashOtp(mobile, code), expiresAt: new Date(Date.now() + OTP_TTL_MS), ip: req.ip },
     });
@@ -81,7 +81,7 @@ const routes: FastifyPluginAsync = async (app) => {
     const b = parse(otpVerifySchema, req.body);
     const user = await resolveUser(b.mobile);
 
-    const bypass = env.DEV_OTP_BYPASS && !isProd && b.code === DEV_OTP;
+    const bypass = otpBypassFor(b.mobile) && b.code === DEV_OTP;
     if (!bypass) {
       const otp = await prisma.otpRequest.findFirst({
         where: { mobile: b.mobile, consumed: false, expiresAt: { gt: new Date() } },

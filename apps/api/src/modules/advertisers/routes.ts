@@ -9,7 +9,7 @@ import { parse } from '../../lib/parse';
 import { paginate } from '../../lib/pagination';
 import { httpError } from '../../lib/errors';
 import { audit } from '../../lib/audit';
-import { getSmsProvider, DEV_OTP } from '../../lib/sms';
+import { getSmsProvider, DEV_OTP, otpBypassFor, otpCodeFor } from '../../lib/sms';
 import { ACCESS_TTL_SEC, REFRESH_COOKIE, authenticate, createSession, loadAuthUser, requireHead, requirePerm, signAccess } from '../../lib/auth';
 
 const OTP_TTL_MS = 5 * 60_000;
@@ -41,7 +41,7 @@ const routes: FastifyPluginAsync = async (app) => {
     const since = new Date(Date.now() - SEND_WINDOW_MS);
     const sends = await prisma.otpRequest.count({ where: { mobile, createdAt: { gte: since } } });
     if (sends >= MAX_SENDS) throw httpError(429, 'OTP_SEND_LIMIT', 'Too many OTP requests. Please try again in a few minutes.');
-    const code = env.DEV_OTP_BYPASS ? DEV_OTP : String(crypto.randomInt(100000, 1000000));
+    const code = otpCodeFor(mobile, () => String(crypto.randomInt(100000, 1000000)));
     await prisma.otpRequest.create({ data: { mobile, otpHash: hashOtp(mobile, code), expiresAt: new Date(Date.now() + OTP_TTL_MS), ip: req.ip } });
     await getSmsProvider().sendOtp(mobile, code);
     return { data: { sent: true, expiresInSec: OTP_TTL_MS / 1000, sendsLeft: MAX_SENDS - sends - 1 } };
@@ -57,7 +57,7 @@ const routes: FastifyPluginAsync = async (app) => {
       trustDevice: z.boolean().optional(),
     }), req.body);
     await assertMobileFree(b.mobile);
-    const bypass = env.DEV_OTP_BYPASS && !isProd && b.code === DEV_OTP;
+    const bypass = otpBypassFor(b.mobile) && b.code === DEV_OTP;
     if (!bypass) {
       const otp = await prisma.otpRequest.findFirst({ where: { mobile: b.mobile, consumed: false, expiresAt: { gt: new Date() } }, orderBy: { createdAt: 'desc' } });
       if (!otp) throw httpError(400, 'OTP_EXPIRED', 'This OTP has expired. Please request a new one.');
